@@ -1,17 +1,16 @@
 <?php
 
 class Conexao {
-   private $conn;
-	 public $id;
-	 private $nome;
-	 private $descricao;
-	 private $preco;
-
+   private $conn; 
+	 private static $dbHost = "Seu host";
+	 private static $dbName = "Sua database";
+	 private static $dbUser = "Seu usuario";
+	 private static $dbPass = "Sua senha";
 
    public function __construct()
 	 {
 		 try {
-       $this->conn = new PDO("mysql:dbhost=localhost;dbname=crud", "root", "Ossoguian*10");
+       $this->conn = new PDO("mysql:dbhost=".self::$dbHost.";"."dbname=".self::$dbName, self::$dbUser, self::$dbPass);
 			 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		 }catch(PDOExcpetion $e){
 			 echo $e->getMessage();
