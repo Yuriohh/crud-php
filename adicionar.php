@@ -2,33 +2,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Adicionar Item</title>
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adicionar Item</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 </head>
 <body>
 	<h1>Adicionar Item</h1>
 
 	<div>
 		<?php $crud = new Conexao(); ?>
-		 <form action="<?php $crud->create(); ?>" method="POST" enctype="multipart/form-data">
-		 <label for="">Nome</label>
-		 <input type="text" name="nome">
+		<form action="<?php $crud->create(); ?>" method="POST" enctype="multipart/form-data">
+		<label for="">Nome</label>
+		<input type="text" name="nome">
 
-		 <br>
+		<br>
 
-		 <label for="">Descrição</label>
-		 <input type="text" name="descricao">
+		<label for="">Descrição</label>
+		<input type="text" name="descricao">
 
-		 <br>
+		<br>
 
-		 <label for="">Preço</label>
-		 <input type="text" name="preco">
+		<label for="">Preço</label>
+		<input type="text" name="preco">
 
-		 <br>
+		<br>
 
-		 <input type="submit" value="Salvar">
+		<input type="submit" value="Salvar">
 		</form>
 	 </div>
 </body>

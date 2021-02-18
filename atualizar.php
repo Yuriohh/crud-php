@@ -8,36 +8,36 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
 </head>
 <body>
-    <h1>Atualizando Item</h1>
+  <h1>Atualizando Item</h1>
 
-		<div>
-			<?php $crud = new Conexao();
-			$id = $_GET["id"];
-			foreach($crud->updateScreen($id) as $data): ?>
-														<?php if(isset($_GET['delete'])) {
-															$crud->delete($data['Id']);
-														} ?>
-				<form action="<?php $crud->update($id); ?>" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?=$data['Id']; ?>">
+	<div>
+		<?php $crud = new Conexao();
+		$id = $_GET["id"];
+		foreach($crud->updateScreen($id) as $data): ?>
+			<?php if(isset($_GET['delete'])) {
+				$crud->delete($data['Id']);
+			} ?>
+			<form action="<?php $crud->update($id); ?>" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?=$data['Id']; ?>">
 
-            <label for="">Nome</label>
-            <input type="text" name="nome" value="<?=$data['Nome']; ?>">
+        <label for="">Nome</label>
+        <input type="text" name="nome" value="<?=$data['Nome']; ?>">
 
-            <br>
+        <br>
 
-            <label for="">Descrição</label>
-            <input type="text" name="descricao" value="<?=$data['Descricao']; ?>">
+        <label for="">Descrição</label>
+        <input type="text" name="descricao" value="<?=$data['Descricao']; ?>">
 
-            <br>
+        <br>
 
-            <label for="">Preço</label>
-            <input type="text" name="preco" value="<?=$data['Preco']; ?>">
+        <label for="">Preço</label>
+        <input type="text" name="preco" value="<?=$data['Preco']; ?>">
 
-            <br>
+        <br>
 
-						<input type="submit" value="Salvar">
-        </form>
-			<?php endforeach; ?>
-    </div>
+				<input type="submit" value="Salvar">
+      </form>
+		<?php endforeach; ?>
+  </div>
 </body>
 </html>
